@@ -12,13 +12,13 @@ app.use(express.json())
 app.use(Router)
 app.use(cors(
     {
+        origin: 'http://localhost:3000/',
         credentials:true,
-        origin:"http://localhost:3000"
     }
 ));
 mongoose.connect(process.env.DB_URI,{useNewUrlParser:true}).then(()=>{
 console.log("connected to db")    
-app.listen(3000,()=>{
+app.listen(5000,()=>{
     console.log('Server is up on port 3000')
 })})
 
